@@ -1,6 +1,6 @@
 # durak
 ## Pages:
-- /profile/ - self profile
+- / - self profile
 - /[id]/profile/ - other person's profile
 - /start/ - creating new game page
 - /play/ - game page - main app
