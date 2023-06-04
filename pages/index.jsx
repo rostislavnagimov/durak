@@ -2,7 +2,8 @@ import Link from "next/link";
 import { useTelegram } from "../telegram";
 
 const Profile = () => {
-  const { user } = useTelegram()
+  const { user, webApp } = useTelegram()
+  {webApp && webApp.expand()}
   
   return (
     <>
