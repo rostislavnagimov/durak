@@ -57,6 +57,7 @@ button {
 
 .profile__body {
   display: flex;
+  flex-direction: column;
   background-color: green;
   height: calc(100vh - 50px);
   justify-content: center;
@@ -66,4 +67,9 @@ button {
 .profile__body > * {
   text-align: center;
   font-weight: bold;
+}
+
+.user {
+  text-align: center;
+  margin: 5px;
 }

@@ -1,17 +1,11 @@
 import '../styles/globals.css'
+import { TelegramProvider } from "../telegram";
 
 const App = ({ Component, pageProps }) => {
-  if (typeof window !== 'undefined') {
-    const tg = window.Telegram?.WebApp
-  
-    if(tg) {
-      tg.expand()
-    }
-  }
   return (
-    <>
+    <TelegramProvider>
       <Component {...pageProps} />
-    </>
+    </TelegramProvider>
   )
 }
 
