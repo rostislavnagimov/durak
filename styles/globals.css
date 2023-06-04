@@ -70,6 +70,15 @@ button {
 }
 
 .user {
+  display: flex;
+  flex-direction: row;
   text-align: center;
   margin: 5px;
+}
+
+.user__image {
+  height: 100px;
+  width: 50px;
+  margin: 10px;
+  background-color: blueviolet;
 }

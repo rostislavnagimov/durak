@@ -2,9 +2,7 @@ import Link from "next/link";
 import { useTelegram } from "../telegram";
 
 const Profile = () => {
-  const { user, webApp } = useTelegram()
-
-
+  const { user } = useTelegram()
   
   return (
     <>
@@ -12,6 +10,23 @@ const Profile = () => {
         <p className='profile__text'>PROFILE</p>
       </div>
       <div className='profile__body'>
+        <div className="user">
+          {user ? (
+            <div>
+              <div className="user__image"></div>
+              <h1>{`${user?.first_name} ${user?.last_name}`}</h1>
+              <h2>{`ID: ${user?.id}`}</h2>
+              <ul>
+                <li>Сыграно игр: 000</li>
+                <li>Побед: 000</li>
+                <li>Фишек: 000</li>
+                <li>Баланс: 000</li>
+              </ul>
+            </div>
+          ) : (
+            <div>Make sure web app is opened from telegram client</div>
+          )}
+        </div>
         <ul>
           <li>
             <Link
@@ -35,15 +50,6 @@ const Profile = () => {
             </Link>
           </li>
         </ul>
-        <div className="user">
-          {user ? (
-            <div>
-              <h1>Welcome {user?.username}</h1>
-            </div>
-          ) : (
-            <div>Make sure web app is opened from telegram client</div>
-          )}
-        </div>
       </div>
     </>
 )}
