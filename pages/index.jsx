@@ -25,34 +25,23 @@ const Profile = () => {
             </ul>
             </div>
           </div>
-          <div>
+          <div className="additional_info">
             <h1>Дополнительная информация</h1>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
           </div>
-        </div>
-        <ul>
-          <li>
+          <div className="button-block">
             <Link
-            href={'/start'}
+              href={'/start'}
             >
-            CREATE NEW GAME
+              NEW GAME
             </Link>
-          </li>
-          <li>
-            <Link
-            href={'/play'}
-            >
-            PLAY
-            </Link>
-          </li>
-          <li>
             <Link
             href={'/friends'}
             >
             FRIENDS
             </Link>
-          </li>
-        </ul>
+          </div>
+        </div>
       </div>
     </>
 )}
