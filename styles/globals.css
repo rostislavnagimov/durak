@@ -70,15 +70,36 @@ button {
 }
 
 .user {
-  display: flex;
+  border: 8px black double;
   flex-direction: row;
   text-align: center;
-  margin: 5px;
+  margin: 20px;
+  padding: 5px;
+  width: 90%;
+  height: 95vh;
+  max-width: 1000px;
 }
 
 .user__image {
-  height: 100px;
-  width: 50px;
-  margin: 10px;
+  height: 200px;
+  width: 150px;
+  margin: 0 10px;
   background-color: blueviolet;
+}
+
+.user__info {
+  display: flex;
+  justify-content: center;
+}
+
+.user__info__stats {
+  margin-top: 20px;
+}
+
+.user__info h1 {
+  font-size: larger;
+}
+
+.user__info h2 {
+  font-size: large;
 }
