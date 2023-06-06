@@ -71,7 +71,6 @@ button {
 }
 
 .user {
-  border: 8px black double;
   flex-direction: row;
   text-align: center;
   margin: 20px;
@@ -121,4 +120,5 @@ button {
   height: 30px;
   background-color: blanchedalmond;
   border: 2px dashed blue;
+  margin: 5px;
 }
