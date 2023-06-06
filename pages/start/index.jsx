@@ -3,32 +3,38 @@ import Link from "next/link";
 const NewGame = () => (
   <>
     <div className='profile'>
-        <p className='profile__text'>START</p>
+        <p className='profile__text'>NEW GAME</p>
     </div>
     <div className='profile__body'>
-      <ul>
-        <li>
-          <Link
-          href={'/'}
-          >
-          HOME
-          </Link>
-        </li>
-        <li>
-          <Link
+      <div className='bid_mode'>
+        <span>Bid mode</span>
+        <div>
+          <div>First</div>
+          <div>Second</div>
+          <div>Bid size</div>
+          <div>Bid</div>
+        </div>
+      </div>
+      <div className="game_mode">
+        <div>Flip</div>
+        <div>Transfer</div>
+      </div>
+      <div>
+        <span>Team</span>
+        <ol>
+          <li>member</li>
+          <li>member</li>
+          <li>member</li>
+          <li>member</li>
+        </ol>
+      </div>
+      <div className='playbutton'>
+        <Link
           href={'/play'}
-          >
+        >
           PLAY
-          </Link>
-        </li>
-        <li>
-          <Link
-          href={'/friends'}
-          >
-          FRIENDS
-          </Link>
-        </li>
-      </ul>
+        </Link>
+      </div>
     </div>
   </>
 )

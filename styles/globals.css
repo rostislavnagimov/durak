@@ -73,8 +73,6 @@ button {
 .user {
   flex-direction: row;
   text-align: center;
-  margin: 20px;
-  padding: 5px;
   width: 90%;
   height: 95vh;
   max-width: 1000px;
@@ -116,6 +114,14 @@ button {
 }
 
 .button-block a {
+  width: 100px;
+  height: 30px;
+  background-color: blanchedalmond;
+  border: 2px dashed blue;
+  margin: 5px;
+}
+
+.playbutton {
   width: 100px;
   height: 30px;
   background-color: blanchedalmond;
