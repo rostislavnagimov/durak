@@ -3,7 +3,14 @@ import Link from "next/link";
 const NewGame = () => (
   <>
     <div className='profile'>
+      <div className='newgame__header'>
+        <Link
+          href={'/'}
+        >
+          <div className="user__image__small"></div>
+        </Link>
         <p className='profile__text'>NEW GAME</p>
+      </div>
     </div>
     <div className='profile__body'>
       <div className='bid_mode'>
