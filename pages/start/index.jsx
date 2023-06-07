@@ -1,6 +1,10 @@
 import Link from "next/link";
+import { useState } from "react";
 
-const NewGame = () => (
+const NewGame = () => {
+  const [mode, setMode] = useState(true)
+  
+  return (
   <>
     <div className='profile'>
       <div className='newgame__header'>
@@ -15,9 +19,21 @@ const NewGame = () => (
     <div className='profile__body'>
       <div className='bid_mode'>
         <span>Bid mode</span>
+        <div className='bid_select'>
+          <div
+            className={mode ? 'bid_option' : 'bid_option__selected'}
+            onClick={()=>{setMode(!mode)}}
+          >
+            First
+          </div>
+          <div
+            className={!mode ? 'bid_option' : 'bid_option__selected'}
+            onClick={()=>{setMode(!mode)}}
+          >
+            Second
+          </div>
+        </div>
         <div>
-          <div>First</div>
-          <div>Second</div>
           <div>Bid size</div>
           <div>Bid</div>
         </div>
@@ -44,6 +60,6 @@ const NewGame = () => (
       </div>
     </div>
   </>
-)
+)}
 
 export default NewGame;
