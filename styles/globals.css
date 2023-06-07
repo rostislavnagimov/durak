@@ -192,3 +192,10 @@ button {
   display: flex;
   flex-direction: row;
 }
+
+ol {
+  list-style: decimal;
+}
+ ol li {
+  margin: 5px;
+ }

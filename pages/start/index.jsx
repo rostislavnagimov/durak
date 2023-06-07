@@ -30,13 +30,13 @@ const NewGame = () => {
             className={mode ? 'bid_option' : 'bid_option__selected'}
             onClick={()=>{setMode(!mode)}}
           >
-            First
+            Money
           </div>
           <div
             className={!mode ? 'bid_option' : 'bid_option__selected'}
             onClick={()=>{setMode(!mode)}}
           >
-            Second
+            Coins
           </div>
         </div>
         <div>
@@ -58,13 +58,13 @@ const NewGame = () => {
           className={game ? 'game_option' : 'game_option__selected'}
           onClick={()=>{setGame(!game)}}
         >
-          First
+          Throw-in
         </div>
         <div
           className={!game ? 'game_option' : 'game_option__selected'}
           onClick={()=>{setGame(!game)}}
         >
-          Second
+          Transfer
         </div>
       </div>
       <div>
@@ -78,6 +78,7 @@ const NewGame = () => {
       </div>
       <div className='playbutton'>
         <Link
+          onClick={() => (alert(`Играем на ${!mode ? 'деньги' : 'фишки'}, ставка ${value}, в ${!game ? 'подкидной' : 'переводной'}`))}
           href={'/play'}
         >
           PLAY
