@@ -164,12 +164,6 @@ button {
   margin: 20px;
   border: 5px dashed blue;
 }
-.bid_option:active {
-  height: 130px;
-  width: 130px;
-  margin: 30px;
-  border: 5px dashed blue;
-}
 
 .bid_option__selected {
   height: 150px;
@@ -177,4 +171,24 @@ button {
   margin: 20px;
   background-color: blueviolet;
   border: 5px dashed rgb(255, 0, 174);
+}
+
+.game_option {
+  height: 50px;
+  width: 150px;
+  margin: 20px;
+  border: 5px dashed blue;
+}
+
+.game_option__selected {
+  height: 50px;
+  width: 150px;
+  margin: 20px;
+  background-color: blueviolet;
+  border: 5px dashed rgb(255, 0, 174);
+}
+
+.game_mode {
+  display: flex;
+  flex-direction: row;
 }

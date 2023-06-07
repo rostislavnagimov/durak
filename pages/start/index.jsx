@@ -3,6 +3,12 @@ import { useState } from "react";
 
 const NewGame = () => {
   const [mode, setMode] = useState(true)
+  const [value, setValue] = useState(0)
+  const [game, setGame] = useState(true)
+
+  const handleChange = (e) => {
+    setValue(e.target.value);
+  };
   
   return (
   <>
@@ -34,13 +40,32 @@ const NewGame = () => {
           </div>
         </div>
         <div>
-          <div>Bid size</div>
-          <div>Bid</div>
+          <div>
+            <input
+              type="range"
+              min={0}
+              max={100}
+              value={value}
+              onChange={handleChange}
+              style={{  scale: '3', margin: '30px' }}
+            />
+          </div>
+          <div>{`Your bid is ${value}`}</div>
         </div>
       </div>
       <div className="game_mode">
-        <div>Flip</div>
-        <div>Transfer</div>
+        <div
+          className={game ? 'game_option' : 'game_option__selected'}
+          onClick={()=>{setGame(!game)}}
+        >
+          First
+        </div>
+        <div
+          className={!game ? 'game_option' : 'game_option__selected'}
+          onClick={()=>{setGame(!game)}}
+        >
+          Second
+        </div>
       </div>
       <div>
         <span>Team</span>
