@@ -27,13 +27,13 @@ const NewGame = () => {
         <span>Bid mode</span>
         <div className='bid_select'>
           <div
-            className={mode ? 'bid_option' : 'bid_option__selected'}
+            className={mode ? 'bid_option__selected' : 'bid_option'}
             onClick={()=>{setMode(!mode)}}
           >
             <span>Money</span>
           </div>
           <div
-            className={!mode ? 'bid_option' : 'bid_option__selected'}
+            className={!mode ? 'bid_option__selected' : 'bid_option'}
             onClick={()=>{setMode(!mode)}}
           >
             <span>Coins</span>
@@ -50,18 +50,18 @@ const NewGame = () => {
               style={{  scale: '2.7', margin: '30px' }}
             />
           </div>
-          <div>{`Your bid is ${value}`}</div>
+          <div>{`Your bid is ${value} ${mode ? 'moneys' : 'coins'}`}</div>
         </div>
       </div>
       <div className="game_mode">
         <div
-          className={game ? 'game_option' : 'game_option__selected'}
+          className={game ? 'game_option__selected' : 'game_option'}
           onClick={()=>{setGame(!game)}}
         >
           Throw-in
         </div>
         <div
-          className={!game ? 'game_option' : 'game_option__selected'}
+          className={!game ? 'game_option__selected' : 'game_option'}
           onClick={()=>{setGame(!game)}}
         >
           Transfer
@@ -78,7 +78,7 @@ const NewGame = () => {
       </div>
       <div className='playbutton'>
         <Link
-          onClick={() => (alert(`Играем на ${!mode ? 'деньги' : 'фишки'}, ставка ${value}, в ${!game ? 'подкидной' : 'переводной'}`))}
+          onClick={() => (alert(`Играем на ${mode ? 'деньги' : 'фишки'}, ставка ${value}, в ${game ? 'подкидной' : 'переводной'}`))}
           href={'/play'}
         >
           PLAY

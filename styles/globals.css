@@ -213,11 +213,9 @@ ol {
  }
 
  .deck {
+  position: absolute;
+  bottom: 40px;
   display: flex;
-  /* width: 100%;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center; */
  }
 
  .deck * {
@@ -225,5 +223,35 @@ ol {
  }
 
  .deck img:hover {
+  scale: 1.1;
+ }
+
+ .field {
+  display: flex;
+  width: 95%;
+ }
+
+ .point {
+  display:flex;
+  width: 15vh;
+  height: 200px;
+  justify-content: center;
+  align-items: center;
+ }
+
+ .point div {
+  width: 70%;
+  height: 70%;
+  border: 1px dashed black;
+  border-radius: 5px;
+  rotate: 20deg;
+ }
+
+ .point div:hover {
+  width: 70%;
+  height: 70%;
+  border: 1px dashed black;
+  border-radius: 5px;
+  rotate: 20deg;
   scale: 1.1;
  }
