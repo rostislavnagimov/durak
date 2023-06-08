@@ -159,33 +159,45 @@ button {
 }
 
 .bid_option {
+  display: flex;
   height: 150px;
   width: 150px;
   margin: 20px;
   border: 5px dashed blue;
+  justify-content: center;
+  align-items: center;
 }
 
 .bid_option__selected {
+  display: flex;
   height: 150px;
   width: 150px;
   margin: 20px;
   background-color: blueviolet;
   border: 5px dashed rgb(255, 0, 174);
+  justify-content: center;
+  align-items: center;
 }
 
 .game_option {
+  display: flex;
   height: 50px;
   width: 150px;
   margin: 20px;
   border: 5px dashed blue;
+  justify-content: center;
+  align-items: center;
 }
 
 .game_option__selected {
+  display: flex;
   height: 50px;
   width: 150px;
   margin: 20px;
   background-color: blueviolet;
   border: 5px dashed rgb(255, 0, 174);
+  justify-content: center;
+  align-items: center;
 }
 
 .game_mode {
@@ -197,5 +209,15 @@ ol {
   list-style: decimal;
 }
  ol li {
+  margin: 5px;
+ }
+
+ .deck {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+ }
+
+ .deck * {
   margin: 5px;
  }

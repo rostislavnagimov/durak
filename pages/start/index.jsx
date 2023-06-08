@@ -30,13 +30,13 @@ const NewGame = () => {
             className={mode ? 'bid_option' : 'bid_option__selected'}
             onClick={()=>{setMode(!mode)}}
           >
-            Money
+            <span>Money</span>
           </div>
           <div
             className={!mode ? 'bid_option' : 'bid_option__selected'}
             onClick={()=>{setMode(!mode)}}
           >
-            Coins
+            <span>Coins</span>
           </div>
         </div>
         <div>
@@ -47,7 +47,7 @@ const NewGame = () => {
               max={100}
               value={value}
               onChange={handleChange}
-              style={{  scale: '3', margin: '30px' }}
+              style={{  scale: '2.7', margin: '30px' }}
             />
           </div>
           <div>{`Your bid is ${value}`}</div>
