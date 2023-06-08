@@ -50,7 +50,11 @@ const Play = () => {
         </ul>
         <div className='deck'>
           {deck.map((card) => (
-            <img src={`/cards/${card}.png`} width='50px'/>
+            <img
+              src={process.env.PUBLIC_URL ? `${process.env.PUBLIC_URL}/cards/${card}.png` : `/cards/${card}.png`}
+              width='50px'
+              key={card}
+            />
           ))}
         </div>
       </div>
