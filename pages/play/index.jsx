@@ -51,7 +51,7 @@ const Play = () => {
         <div className='deck'>
           {deck.map((card) => (
             <img
-              src={process.env.PUBLIC_URL ? `${process.env.PUBLIC_URL}/cards/${card}.png` : `/cards/${card}.png`}
+              src={process.env.PUBLIC_URL ? `${process.env.PUBLIC_URL}/cards/${card}.png` : `https://rostislavnagimov.github.io/durak/cards/${card}.png`}
               width='50px'
               key={card}
             />
