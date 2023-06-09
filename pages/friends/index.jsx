@@ -1,36 +1,20 @@
 import Link from "next/link";
+import { useTelegram } from "../../telegram";
 
-const Friends = () => (
+
+const Friends = () => {
+  const { user } = useTelegram()
+  return (
   <>
     <div className='profile'>
         <p className='profile__text'>START</p>
     </div>
     <div className='profile__body'>
-      <ul>
-        <li>
-          <Link
-          href={'/'}
-          >
-          HOME
-          </Link>
-        </li>
-        <li>
-          <Link
-          href={'/start'}
-          >
-          CREATE NEW GAME
-          </Link>
-        </li>
-        <li>
-          <Link
-          href={'/play'}
-          >
-          PLAY
-          </Link>
-        </li>
-      </ul>
+      {user && Object.keys(user).map((i) => (
+        user[i]
+      ))}
     </div>
   </>
-)
+)}
 
 export default Friends;
