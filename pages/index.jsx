@@ -17,13 +17,15 @@ const Profile = () => {
             <div>
               <h1>{`${user?.first_name || 'Name'} ${user?.last_name || 'Placeholder'}`}</h1>
               <h2>{`ID: ${user?.id || 'ID'}`}</h2>
-            <ul className='user__info__stats'>
-              <li>Сыграно игр: 000</li>
-              <li>Побед: 000</li>
-              <li>Фишек: 000</li>
-              <li>Баланс: 000</li>
-            </ul>
+              <ul className='user__info__stats'>
+                <li>Сыграно игр: 000</li>
+                <li>Побед: 000</li>
+                <li>Фишек: 000</li>
+                <li>Баланс: 000</li>
+              </ul>
+              <span>{user && user.photo_url}</span>
             </div>
+            
           </div>
           <div className="additional_info">
             <h1>Дополнительная информация</h1>
