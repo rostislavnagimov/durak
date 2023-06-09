@@ -10,9 +10,9 @@ const Friends = () => {
         <p className='profile__text'>START</p>
     </div>
     <div className='profile__body'>
-      {user && Object.keys(user).map((i) => (
-        user[i]
-      ))}
+      {user && (
+        <img src={user.photo_url} width='100px'/>
+      )}
     </div>
   </>
 )}
