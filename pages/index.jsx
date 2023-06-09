@@ -23,7 +23,7 @@ const Profile = () => {
                 <li>Фишек: 000</li>
                 <li>Баланс: 000</li>
               </ul>
-              <span>{webApp.initData || "Photo"}</span>
+              <span>{webApp?.initData || "Photo"}</span>
             </div>
             
           </div>

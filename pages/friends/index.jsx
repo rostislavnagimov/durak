@@ -10,8 +10,8 @@ const Friends = () => {
         <p className='profile__text'>START</p>
     </div>
     <div className='profile__body'>
-      {user && Object.keys(webApp.initData).map((i) => (
-        <p>{webApp.initData[i]}</p>
+      {webApp && Object.keys(webApp?.initData).map((i) => (
+        <p>{webApp?.initData[i]}</p>
       ))}
     </div>
   </>
