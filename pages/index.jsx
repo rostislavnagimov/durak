@@ -23,7 +23,7 @@ const Profile = () => {
                 <li>Фишек: 000</li>
                 <li>Баланс: 000</li>
               </ul>
-              <span>{user && user.photo_url}</span>
+              <span>{user?.photo_url || "Photo"}</span>
             </div>
             
           </div>

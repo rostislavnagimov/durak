@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useTelegram } from "../../telegram";
+import { useTelegram } from "../telegram../telegram";
 
 
 const Friends = () => {
@@ -10,12 +10,9 @@ const Friends = () => {
         <p className='profile__text'>START</p>
     </div>
     <div className='profile__body'>
-      {user && (
-        <>
-          <div>{user.photo_url}</div>
-          <img src={user.photo_url} width='100px'/>
-        </>
-      )}
+      {user && Object.keys(user).map((i) => (
+        <p>{user[i]}</p>
+      ))}
     </div>
   </>
 )}
