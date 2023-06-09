@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useTelegram } from "../telegram../telegram";
+import { useTelegram } from "../../telegram";
 
 
 const Friends = () => {
