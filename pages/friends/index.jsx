@@ -11,7 +11,10 @@ const Friends = () => {
     </div>
     <div className='profile__body'>
       {user && (
-        <img src={user.photo_url} width='100px'/>
+        <>
+          <div>{user.photo_url}</div>
+          <img src={user.photo_url} width='100px'/>
+        </>
       )}
     </div>
   </>
