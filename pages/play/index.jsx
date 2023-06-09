@@ -1,29 +1,33 @@
 import Link from "next/link";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { deck, shuffle, baseField } from "../../helpers/helpers";
 
 const Play = () => {
-  const fullDeck = [11, 12, 13, 14, 15, 16, 17, 18, 19, 21, 22, 23, 24, 25, 26, 27, 28, 29, 31, 32, 33, 34, 35, 36, 37, 38, 39, 41, 42, 43, 44, 45, 46, 47, 48, 49]
-  const getRandomNumber = (min, max) => {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+  const [select, setSelect] = useState()
+  const [cards, setCards] = useState([])
+  const [field, setField] = useState(baseField)
+
+  useEffect (() => {
+    console.log(deck)
+    shuffle(deck)
+    console.log(deck)
+    setCards(deck.splice(0,6))
+  }, [])
+
+  const selectCard = (card) => {
+    setSelect(card)
   }
 
-  const getRandomNumbers = () => {
-    let randomNumbers = [];
-
-    while (randomNumbers.length < 6) {
-      let randomNumber = getRandomNumber(0, fullDeck.length - 1);
-
-      if (!randomNumbers.includes(fullDeck[randomNumber])) {
-        randomNumbers.push(fullDeck[randomNumber]);
-      }
+  const placeCard = (f) => {
+    if (select) {
+      const updatedField = { ...field }
+      updatedField[f] = select
+      setField(updatedField)
+      setSelect(null)
+      setCards((prevCards) => prevCards.filter((card) => card !== select))
     }
+  };
 
-  return randomNumbers;
-}
- let deck =[]
- if (deck.length === 0) {
-  deck = getRandomNumbers()
- }
 
 
   return (
@@ -40,24 +44,37 @@ const Play = () => {
       </div>
       <div className='profile__body'>
         <div className='field'>
-          <div className='point'><div></div></div>
-          <div className='point'><div></div></div>
-          <div className='point'><div></div></div>
-        </div>
-        <div className='field'>
-          <div className='point'><div></div></div>
-          <div className='point'><div></div></div>
-          <div className='point'><div></div></div>
+          {Object.keys(field).map((f) => (
+            <div
+              className='point'
+              onClick = {() => (placeCard(f))}
+              >
+              {field[f] && (
+                <div>
+                  <img
+                    // src={process.env.PUBLIC_URL ? `${process.env.PUBLIC_URL}/cards/${card}.png` : `https://rostislavnagimov.github.io/durak/cards/${card}.png`}
+                    src={`cards/${field[f]}.png`}
+                    width='100px'
+                  />
+                </div>
+              )}
+              {!field[f] && <div></div>}
+            </div>
+          ))}
         </div>
 
         <div className='deck'>
-          {deck.map((card) => (
+          {cards.map((card) => {
+            return (
             <img
-              src={process.env.PUBLIC_URL ? `${process.env.PUBLIC_URL}/cards/${card}.png` : `https://rostislavnagimov.github.io/durak/cards/${card}.png`}
+              // src={process.env.PUBLIC_URL ? `${process.env.PUBLIC_URL}/cards/${card}.png` : `https://rostislavnagimov.github.io/durak/cards/${card}.png`}
+              src={`cards/${card}.png`}
               width='50px'
-              key={card}
+              onClick={() => (
+                selectCard(card)
+              )}
             />
-          ))}
+          )})}
         </div>
       </div>
     </>

@@ -228,6 +228,8 @@ ol {
 
  .field {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   width: 95%;
  }
 
@@ -240,20 +242,15 @@ ol {
  }
 
  .point div {
-  width: 70%;
-  height: 70%;
+  width: 100px;
+  height: 120px;
   border: 1px dashed black;
   border-radius: 5px;
   rotate: 20deg;
-  margin-left: 10px;
+  margin: 10px;
+ }
+ .point div img{
+  width: inherit;
+  height: inherit;
  }
 
- .point div:hover {
-  width: 70%;
-  height: 70%;
-  border: 1px dashed black;
-  border-radius: 5px;
-  rotate: 20deg;
-  scale: 1.1;
-  margin-left: 10px;
- }
