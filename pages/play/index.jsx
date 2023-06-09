@@ -19,12 +19,26 @@ const Play = () => {
   }
 
   const placeCard = (f) => {
-    if (select) {
-      const updatedField = { ...field }
+    const updatedField = { ...field }
+    if (select && !field[f]) {
       updatedField[f] = select
       setField(updatedField)
       setSelect(null)
       setCards((prevCards) => prevCards.filter((card) => card !== select))
+    } else if (!select && field[f]) {
+      updatedField[f] = undefined
+      setField(updatedField)
+      setSelect(null)
+      const hand = [...cards]
+      hand.push(field[f])
+      setCards(hand)
+    } else if (select && field[f]) {
+      updatedField[f] = select
+      setField(updatedField)
+      const hand = [...cards].filter((card) => card !== select)
+      hand.push(field[f])
+      setSelect(null)
+      setCards(hand)
     }
   };
 
@@ -52,7 +66,6 @@ const Play = () => {
               {field[f] && (
                 <div>
                   <img
-                    // src={process.env.PUBLIC_URL ? `${process.env.PUBLIC_URL}/cards/${card}.png` : `https://rostislavnagimov.github.io/durak/cards/${card}.png`}
                     src={`cards/${field[f]}.png`}
                     width='100px'
                   />
@@ -67,7 +80,6 @@ const Play = () => {
           {cards.map((card) => {
             return (
             <img
-              // src={process.env.PUBLIC_URL ? `${process.env.PUBLIC_URL}/cards/${card}.png` : `https://rostislavnagimov.github.io/durak/cards/${card}.png`}
               src={`cards/${card}.png`}
               width='50px'
               onClick={() => (
