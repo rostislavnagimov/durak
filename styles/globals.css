@@ -63,6 +63,7 @@ button {
   justify-content: center;
   align-items: center;
   padding-top: 1vh;
+  overflow: scroll;
 }
 
 .profile__body > * {
@@ -145,11 +146,11 @@ button {
   position: absolute;
   top: 0;
   left: 0;
-  height: 40px;
+  height: 5vh;
   width: 30px;
   float: left;
   background-color: blueviolet;
-  margin: 5px;
+  margin: 1vh;
 }
 
 .bid_select {
@@ -253,3 +254,64 @@ ol {
   height: inherit;
  }
 
+ .friend__image__small {
+  height: 15vh;
+  width: 20vw;
+  float: left;
+  background-color: blueviolet;
+  margin: 1vh;
+}
+
+.friend {
+  display: flex;
+  width: 95vw;
+  border: 1px solid black;
+  border-radius: 3px;
+  margin: 1vh;
+}
+
+.friend__info {
+  padding: 1vh;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10vw;
+}
+
+.friends {
+  height: 100%;
+  padding-bottom: 1vh;
+  padding-bottom: 20vh;
+}
+
+.invite {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  background: rgb(161,157,150);
+  background: linear-gradient(0deg, rgba(161,157,150,1) 60%, rgba(161,157,150,0) 100%);
+  height: 20vh;
+  z-index: 10;
+}
+
+.invite button {
+  width: 40vw;
+  position: absolute;
+  bottom: 3vh;
+  left: 30vw;
+  background: rgb(62, 201, 20);
+  background: linear-gradient(0deg, rgb(47, 117, 62) 60%, rgba(87, 227, 120, 0.585) 100%);
+  border: 3px double black;
+  border-radius: 5px;
+}
+
+.invite button:active {
+  width: 40vw;
+  position: absolute;
+  bottom: 3vh;
+  left: 30vw;
+  background: rgb(62, 201, 20);
+  background: linear-gradient(0deg, rgba(87, 227, 120, 0.585) 60%, rgb(47, 117, 62) 100%);
+  border: 3px double black;
+  border-radius: 5px;
+}
