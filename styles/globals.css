@@ -255,8 +255,8 @@ ol {
  }
 
  .friend__image__small {
-  height: 15vh;
-  width: 20vw;
+  height: 10em;
+  width: 10em;
   float: left;
   background-color: blueviolet;
   margin: 1vh;
@@ -265,6 +265,7 @@ ol {
 .friend {
   display: flex;
   width: 95vw;
+  max-width: 500px;
   border: 1px solid black;
   border-radius: 3px;
   margin: 1vh;
@@ -272,9 +273,9 @@ ol {
 
 .friend__info {
   padding: 1vh;
+  width: 100%;
   justify-content: center;
   align-items: center;
-  margin-left: 10vw;
 }
 
 .friends {

@@ -1,3 +1,4 @@
+import Link from "next/link";
 
 const friends = [
   {
@@ -56,6 +57,11 @@ const Friends = () => {
   return (
   <>
     <div className='profile'>
+      <Link
+        href={'/'}
+      >
+        <div className="user__image__small"></div>
+      </Link>
         <p className='profile__text'>FRIENDS</p>
     </div>
     <div className='profile__body'>
