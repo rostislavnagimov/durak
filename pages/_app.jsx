@@ -8,18 +8,15 @@ import React from 'react';
 import Store from '../helpers/store';
 
 const App = ({ Component, pageProps }) => {
-  const router = useRouter();
-  const currentUrl = router.asPath;
-
 
   return (
     <Store>
       <TelegramProvider>
-        <Header title={currentUrl} />
+        <Header />
         <Container>
           <Component {...pageProps}/>
         </Container>
-        <Actions params={currentUrl} />
+        <Actions />
       </TelegramProvider>
     </Store>
   )

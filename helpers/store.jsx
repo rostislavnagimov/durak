@@ -4,6 +4,7 @@ import Context from "./context";
 
 const Store = ({ children }) => {
     const [state, setState] = useState({
+      title: undefined,
       mode: undefined,
       game: undefined,
       value: undefined

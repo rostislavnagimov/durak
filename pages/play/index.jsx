@@ -1,16 +1,19 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { deck, shuffle, baseField } from "../../helpers/helpers";
+import { useContext } from 'react'
+import Context from '../../helpers/context'
 
 const Play = () => {
   const [select, setSelect] = useState()
   const [cards, setCards] = useState([])
   const [field, setField] = useState(baseField)
 
+  const store = useContext(Context);
+
   useEffect (() => {
-    console.log(deck)
+    store.setState({...store.state, title: '/play'})
     shuffle(deck)
-    console.log(deck)
     setCards(deck.splice(0,6))
   }, [])
 

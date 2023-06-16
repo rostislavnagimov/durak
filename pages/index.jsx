@@ -1,10 +1,16 @@
-import Link from "next/link";
 import { useTelegram } from "../telegram";
+import { useContext, useEffect } from 'react'
+import Context from '../helpers/context'
 
 const Profile = () => {
   const { user, webApp } = useTelegram()
   {webApp && webApp.expand()}
-  
+  const store = useContext(Context);
+
+  useEffect(()=>{
+    store.setState({...store.state, title: '/'})
+  },[])
+
   return (
     <>
       <div className='profile__body'>

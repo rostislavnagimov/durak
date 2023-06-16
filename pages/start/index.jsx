@@ -15,6 +15,7 @@ const NewGame = () => {
   const store = useContext(Context);
   useEffect(()=>{
     store.setState({
+      title: '/start',
       mode: mode,
       value: value,
       game:game

@@ -3,15 +3,9 @@ import Link from 'next/link'
 import { useContext } from 'react'
 import Context from '../../helpers/context'
 
-const Actions = ({ params }) => {
-  const names = {
-    "/": "PROFILE",
-    "/friends": "FIRENDS",
-    "/play": "FOOL",
-    "/start": "NEW GAME"
-  }
-
+const Actions = () => {
   const store = useContext(Context);
+  const params = store.state.title
     return (
       <section className={styles['actions']}>
         <div className="button-block">

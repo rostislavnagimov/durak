@@ -1,7 +1,11 @@
 import styles from './index.module.css'
 import Link from 'next/link'
+import { useContext } from 'react'
+import Context from '../../helpers/context'
 
-const Header = ({ title }) => {
+const Header = () => {
+  const store = useContext(Context);
+  const title = store.state.title
   const names = {
     "/": "PROFILE",
     "/friends": "FIRENDS",
@@ -17,7 +21,7 @@ const Header = ({ title }) => {
           <div className={styles['user__image__small']}></div>
         </Link>
       )}
-      <div>{names[title] ? names[title] : title}</div>
+      <div>{names[title] ? names[title] : <p>{title}</p>}</div>
   </header>
 )}
 

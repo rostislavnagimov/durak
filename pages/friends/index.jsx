@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { useContext, useEffect } from 'react'
+import Context from '../../helpers/context'
 
 const friends = [
   {
@@ -54,16 +56,14 @@ const friends = [
 
 
 const Friends = () => {
+  const store = useContext(Context);
+
+  useEffect(()=>{
+    store.setState({...store.state, title: '/friends'})
+  },[])
+
   return (
   <>
-    <div className='profile'>
-      <Link
-        href={'/'}
-      >
-        <div className="user__image__small"></div>
-      </Link>
-        <p className='profile__text'>FRIENDS</p>
-    </div>
     <div className='profile__body'>
       <div className='friends'>
         {friends.map((friend) => (
