@@ -10,12 +10,13 @@
 .actions div {
     width: 90vw;
     max-width: 300px;
-    margin: 2vh auto;
+    margin: 3vh auto;
     display: flex;
     justify-content: space-evenly;
 }
 
 .actions a {
+    min-height: 2vh;
     background-color: blanchedalmond;
     border: 2px dashed blue;
     font-weight: 600;

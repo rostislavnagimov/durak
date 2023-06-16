@@ -8,26 +8,26 @@ const Actions = () => {
   const params = store.state.title
     return (
       <section className={styles['actions']}>
-        <div className="button-block">
+        <div>
           {params === "/" && (
             <>
-              <button>
-                <Link
-                  href={'/start'}
-                >
-                  NEW GAME
-                </Link>
-              </button>
-              <button>
-                <Link
-                href={'/friends'}
-                >
-                FRIENDS
-                </Link>
-              </button>
+              <Link
+                href={'/start'}
+              >
+                NEW GAME
+              </Link>
+              <Link
+              href={'/friends'}
+              >
+              FRIENDS
+              </Link>
             </>
           )}
-          {params === "/play" && (<div></div>)}
+          {params === "/play" && (
+            <div>
+
+            </div>
+          )}
           {params === "/start" && (
             <Link
               onClick={() => (
