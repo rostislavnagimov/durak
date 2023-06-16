@@ -7,9 +7,6 @@ const Profile = () => {
   
   return (
     <>
-      <div className='profile'>
-        <p className='profile__text'>PROFILE</p>
-      </div>
       <div className='profile__body'>
         <div className="user">
           <div className="user__info">
@@ -28,19 +25,7 @@ const Profile = () => {
           </div>
           <div className="additional_info">
             <h1>Дополнительная информация</h1>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages.</p>
-          </div>
-          <div className="button-block">
-            <Link
-              href={'/start'}
-            >
-              NEW GAME
-            </Link>
-            <Link
-            href={'/friends'}
-            >
-            FRIENDS
-            </Link>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
           </div>
         </div>
       </div>

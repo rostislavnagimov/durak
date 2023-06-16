@@ -36,41 +36,6 @@ ul {
   list-style: none;
 }
 
-button {
-  padding: 0.5rem 1rem;
-  font-weight: bold;
-}
-
-.profile {
-  background-color: grey;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 7vh;
-}
-
-.profile__text {
-  font-size: 20px;
-  color: rgb(44, 44, 146)
-}
-
-.profile__body {
-  display: flex;
-  flex-direction: column;
-  background-color: green;
-  height: 93vh;
-  justify-content: center;
-  align-items: center;
-  padding-top: 1vh;
-  overflow: scroll;
-}
-
-.profile__body > * {
-  text-align: center;
-  font-weight: bold;
-}
-
 .user {
   flex-direction: row;
   text-align: center;
@@ -108,19 +73,6 @@ button {
   margin: 1vh;
 }
 
-.button-block {
-  display: flex;
-  justify-content: space-around;
-}
-
-.button-block a {
-  width: 100px;
-  height: 30px;
-  background-color: blanchedalmond;
-  border: 2px dashed blue;
-  margin: 5px;
-}
-
 .playbutton {
   width: 100px;
   height: 30px;
@@ -140,17 +92,6 @@ button {
 .newgame__header p {
   text-align: center;
   margin: auto;
-}
-
-.user__image__small {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 5vh;
-  width: 30px;
-  float: left;
-  background-color: blueviolet;
-  margin: 1vh;
 }
 
 .bid_select {

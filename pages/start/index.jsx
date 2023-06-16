@@ -1,5 +1,7 @@
-import Link from "next/link";
 import { useState } from "react";
+import Context from "../../helpers/context";
+import { useContext } from "react";
+import { useEffect } from "react";
 
 const NewGame = () => {
   const [mode, setMode] = useState(true)
@@ -9,19 +11,20 @@ const NewGame = () => {
   const handleChange = (e) => {
     setValue(e.target.value);
   };
+
+  const store = useContext(Context);
+  useEffect(()=>{
+    store.setState({
+      mode: mode,
+      value: value,
+      game:game
+    })
+
+  }, [mode, value, game])
+
   
   return (
   <>
-    <div className='profile'>
-      <div className='newgame__header'>
-        <Link
-          href={'/'}
-        >
-          <div className="user__image__small"></div>
-        </Link>
-        <p className='profile__text'>NEW GAME</p>
-      </div>
-    </div>
     <div className='profile__body'>
       <div className='bid_mode'>
         <span>Bid mode</span>
@@ -70,19 +73,11 @@ const NewGame = () => {
       <div>
         <span>Team</span>
         <ol>
-          <li>member</li>
+          <li>mem</li>
           <li>member</li>
           <li>member</li>
           <li>member</li>
         </ol>
-      </div>
-      <div className='playbutton'>
-        <Link
-          onClick={() => (alert(`Играем на ${mode ? 'деньги' : 'фишки'}, ставка ${value}, в ${game ? 'подкидной' : 'переводной'}`))}
-          href={'/play'}
-        >
-          PLAY
-        </Link>
       </div>
     </div>
   </>
