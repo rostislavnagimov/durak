@@ -77,10 +77,6 @@ const Friends = () => {
           </div>
         ))}
       </div>
-      <div className="invite">
-        <button>SEND LINK</button>
-
-      </div>
     </div>
   </>
 )}

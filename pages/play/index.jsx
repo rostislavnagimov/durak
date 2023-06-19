@@ -49,16 +49,6 @@ const Play = () => {
 
   return (
     <>
-      <div className='profile'>
-        <div className='newgame__header'>
-          <Link
-            href={'/'}
-          >
-            <div className="user__image__small"></div>
-          </Link>
-          <p className='profile__text'>PLAY</p>
-        </div>
-      </div>
       <div className='profile__body'>
         <div className='field'>
           {Object.keys(field).map((f) => (

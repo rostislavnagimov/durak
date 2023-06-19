@@ -2,6 +2,8 @@ import styles from './index.module.css'
 import Link from 'next/link'
 import { useContext } from 'react'
 import Context from '../../helpers/context'
+import { CopyToClipboard } from 'react-copy-to-clipboard';
+
 
 const Actions = () => {
   const store = useContext(Context);
@@ -38,6 +40,16 @@ const Actions = () => {
               PLAY
             </Link>
             )}
+          {params === "/friends" && (
+            <CopyToClipboard text='ССЫЛКА'>
+              <a
+              className="actions-button">
+                SEND LINK
+              </a>
+            </CopyToClipboard>
+            )}
+          
+          
         </div>
       </section>
     )

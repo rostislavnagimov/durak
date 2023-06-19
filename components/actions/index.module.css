@@ -4,7 +4,7 @@
     background-color: green;
     position: absolute;
     bottom: 0;
-    left: 0
+    left: 0;
 }
 
 .actions div {
@@ -17,6 +17,18 @@
 
 .actions a {
     min-height: 2vh;
+    min-width: 8rem;
+    text-align: center;
+    background-color: blanchedalmond;
+    border: 2px dashed blue;
+    font-weight: 600;
+    padding: 0.5vh 0.5vw;
+}
+
+.actions-button {
+    min-height: 2vh;
+    min-width: 8rem;
+    text-align: center;
     background-color: blanchedalmond;
     border: 2px dashed blue;
     font-weight: 600;

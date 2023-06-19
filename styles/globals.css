@@ -180,8 +180,9 @@ ol {
  }
 
  .deck {
-  position: absolute;
-  bottom: 40px;
+  position: fixed;
+  bottom: 0;
+  z-index: 5;
   display: flex;
  }
 
@@ -246,9 +247,9 @@ ol {
 }
 
 .friends {
-  height: 100%;
-  padding-bottom: 1vh;
-  padding-bottom: 20vh;
+  height: 85vh;
+  padding-top: 5vh;
+  padding-bottom: 10vh;
 }
 
 .invite {
