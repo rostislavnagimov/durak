@@ -16,4 +16,20 @@ export const baseField = {
     6: undefined
   };
 
+export const FetchUserImage = async (id) => {
+  const userId = id || '159529075'
+  try {
+    const response1 = await
+    fetch(`https://citizen.cool/get-userpic?id=${userId}`)
+    .then(response => response.json())
+
+    const response2 = await fetch(`https://api.telegram.org/bot6065372321:AAHjNaFZDVJZKIxRFDijIjW26GFLjTVqLvw/getFile?file_id=${response1.result}`)
+    .then(response => response.json())
+
+    return (`https://api.telegram.org/file/bot6065372321:AAHjNaFZDVJZKIxRFDijIjW26GFLjTVqLvw/${response2.result.file_path}`)
+  } catch (error) {
+    console.error('Ошибка при выполнении запросов:', error);
+  }  
+}
+
   

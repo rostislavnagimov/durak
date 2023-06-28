@@ -1,22 +1,39 @@
 import { useTelegram } from "../telegram";
 import { useContext, useEffect } from 'react'
 import Context from '../helpers/context'
+import { FetchUserImage } from "../helpers/helpers";
 
 const Profile = () => {
   const { user, webApp } = useTelegram()
   {webApp && webApp.expand()}
   const store = useContext(Context);
 
+  const load = async () => {
+    const img = await FetchUserImage(user?.id)
+    await store.setState({...store.state, title: '/', image: img})
+  }
+
   useEffect(()=>{
-    store.setState({...store.state, title: '/'})
+    load()    
   },[])
+
+  
+  // https://api.telegram.org/bot6141999920:AAF8MOOTaSu9eCgBmls2xoMjhWBSCn43pcc/getFile?file_id=<file_id>
+  // https://api.telegram.org/file/bot6065372321:AAHjNaFZDVJZKIxRFDijIjW26GFLjTVqLvw/photos/file_62.jpg
+
+
+
 
   return (
     <>
       <div className='profile__body'>
         <div className="user">
           <div className="user__info">
-            <div className="user__image"></div>
+            <div className="user__image">
+              {store.state.image && <img src={store.state.image} />}
+              {!store.state.image && <span>Loading...</span>}
+              
+            </div>
             <div>
               <h1>{`${user?.first_name || 'Name'} ${user?.last_name || 'Placeholder'}`}</h1>
               <h2>{`ID: ${user?.id || 'ID'}`}</h2>

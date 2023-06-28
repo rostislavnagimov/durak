@@ -6,19 +6,23 @@ import Context from '../../helpers/context'
 const Header = () => {
   const store = useContext(Context);
   const title = store.state.title
+  const image = store.state.image
   const names = {
     "/": "PROFILE",
     "/friends": "FIRENDS",
     "/play": "FOOL",
     "/start": "NEW GAME",
   }
+  console.log(store.state)
   return (
   <header className={styles['header']}>
       {title != "/" && (
         <Link
           href={'/'}
         >
-          <div className={styles['user__image__small']}></div>
+          <div className={styles['user__image__small']}>
+            <img src={image} />
+          </div>
         </Link>
       )}
       <div>{names[title] ? names[title] : <p>{title}</p>}</div>
