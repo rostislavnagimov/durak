@@ -32,4 +32,9 @@ export const FetchUserImage = async (id) => {
   }  
 }
 
+export const CompareCards = (attack, defend, trump) => {
+  
+
+}
+
   

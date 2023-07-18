@@ -6,6 +6,7 @@ import Context from '../../helpers/context'
 
 const Play = () => {
   const [select, setSelect] = useState()
+  const [trump, setTrump] = useState()
   const [cards, setCards] = useState([])
   const [field, setField] = useState(baseField)
 
@@ -15,6 +16,7 @@ const Play = () => {
     store.setState({...store.state, title: '/play'})
     shuffle(deck)
     setCards(deck.splice(0,6))
+    setTrump(deck[7])
   }, [])
 
   const selectCard = (card) => {
@@ -50,6 +52,19 @@ const Play = () => {
   return (
     <>
       <div className='profile__body'>
+        <div className="trump">
+          <img
+            src={`cards/${trump}.png`}
+          />
+        </div>
+        <div className="cover">
+          <img
+            src={`cards/00.png`}
+          />
+        </div>
+        <div className="enemies">
+
+        </div>
         <div className='field'>
           {Object.keys(field).map((f) => (
             <div

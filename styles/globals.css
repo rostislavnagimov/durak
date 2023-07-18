@@ -189,6 +189,10 @@ ol {
  }
 
  .deck {
+  width: 100vw;
+  max-width: 700px;
+  display: flex;
+  justify-content: center;
   position: fixed;
   bottom: 0;
   z-index: 5;
@@ -207,7 +211,9 @@ ol {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: 95%;
+  align-items: center;
+  width: 90vw;
+  margin: 0 5vw;
  }
 
  .point {
@@ -292,4 +298,33 @@ ol {
   background: linear-gradient(0deg, rgba(87, 227, 120, 0.585) 60%, rgb(47, 117, 62) 100%);
   border: 3px double black;
   border-radius: 5px;
+}
+
+.trump {
+  position: absolute;
+  top: 50%;
+  left: -5px;
+  width: 50px;
+  height: 70px;
+  background-color: red;
+  rotate: 320deg;
+}
+
+.cover {
+  position: absolute;
+  top: calc(50% - 15px);
+  left: -15px;
+  width: 50px;
+  height: 70px;
+  background-color: greenyellow;
+  rotate: 230deg;
+}
+
+.enemies {
+  width: 100vw;
+  background-color: aqua;
+  position: absolute;
+  top: 0;
+  height: 15vh;
+  z-index: 10;
 }
