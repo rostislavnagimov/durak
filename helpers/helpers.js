@@ -33,7 +33,16 @@ export const FetchUserImage = async (id) => {
 }
 
 export const CompareCards = (attack, defend, trump) => {
-  
+  const isTrump = (card) => (card[0] === trump)
+  const weight = (card) => (card[1])
+  if (isTrump(attack) == isTrump(defend)) {
+    const result = weight(attack) > weight(defend)
+    return (result ? 'attack' : 'defend')
+  } else if (isTrump(attack) && !isTrump(defend)) {
+    return 'attack'
+  } else if (!isTrump(attack) && isTrump(defend)) {
+    return 'defend'
+  }
 
 }
 

@@ -3,24 +3,47 @@ import { useEffect, useState } from "react";
 import { deck, shuffle, baseField } from "../../helpers/helpers";
 import { useContext } from 'react'
 import Context from '../../helpers/context'
+import { CompareCards } from "../../helpers/helpers";
 
 const Play = () => {
   const [select, setSelect] = useState()
   const [trump, setTrump] = useState()
   const [cards, setCards] = useState([])
+  const [enemy, setEnemy] = useState([])
+  const [table, setTable] = useState([])
+  const [ready, setReady] = useState(false)
   const [field, setField] = useState(baseField)
 
   const store = useContext(Context);
 
-  useEffect (() => {
-    store.setState({...store.state, title: '/play'})
+  useEffect (async () => {
+    await store.setState({...store.state, title: '/play'})
     shuffle(deck)
-    setCards(deck.splice(0,6))
-    setTrump(deck[7])
+    setCards(deck.slice(0, 6))
+    setEnemy(deck.slice(7, 13))
+    setTable(deck.slice(13, 35))
+    setTrump(deck[35])
+    setReady(true)
   }, [])
+
+  useEffect(()=>{
+    if (ready) {
+      move()
+
+    }
+    
+}, [ready])
 
   const selectCard = (card) => {
     setSelect(card)
+  }
+
+  const move = async () => {
+    const updatedField = {...field}
+    updatedField[0] = enemy[0]
+    const uEnemy = enemy.slice(1, 6)
+    setEnemy(uEnemy)
+    setField(updatedField)
   }
 
   const placeCard = (f) => {
@@ -63,6 +86,13 @@ const Play = () => {
           />
         </div>
         <div className="enemies">
+          {enemy.map(()=>(
+            <img
+              src={`cards/00.png`}
+              width='50px'
+            />
+
+          ))}
 
         </div>
         <div className='field'>

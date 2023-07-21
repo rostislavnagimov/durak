@@ -190,7 +190,6 @@ ol {
 
  .deck {
   width: 100vw;
-  max-width: 700px;
   display: flex;
   justify-content: center;
   position: fixed;
@@ -322,9 +321,18 @@ ol {
 
 .enemies {
   width: 100vw;
-  background-color: aqua;
+  display: flex;
+  justify-content: center;
   position: absolute;
   top: 0;
-  height: 15vh;
-  z-index: 10;
+  z-index: 5;
+  display: flex;
 }
+
+ .enemies * {
+  margin: 5px;
+ }
+
+ .enemies img:hover {
+  scale: 1.1;
+ }
