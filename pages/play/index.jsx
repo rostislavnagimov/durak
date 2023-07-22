@@ -77,18 +77,18 @@ const Play = () => {
       <div className='profile__body'>
         <div className="trump">
           <img
-            src={`cards/${trump}.png`}
+            src={`cards/${trump}.svg`}
           />
         </div>
         <div className="cover">
           <img
-            src={`cards/00.png`}
+            src={`cards/00.svg`}
           />
         </div>
         <div className="enemies">
           {enemy.map(()=>(
             <img
-              src={`cards/00.png`}
+              src={`cards/00.svg`}
               width='50px'
             />
 
@@ -104,7 +104,7 @@ const Play = () => {
               {field[f] && (
                 <div>
                   <img
-                    src={`cards/${field[f]}.png`}
+                    src={`cards/${field[f]}.svg`}
                     width='100px'
                   />
                 </div>
@@ -118,7 +118,7 @@ const Play = () => {
           {cards.map((card) => {
             return (
             <img
-              src={`cards/${card}.png`}
+              src={`cards/${card}.svg`}
               width='50px'
               onClick={() => (
                 selectCard(card)
